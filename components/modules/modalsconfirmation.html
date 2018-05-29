@@ -1,0 +1,28 @@
+<!-- components/modules/modalsconfirmation.html -->
+
+<button type="button" class="btn btn-default" data-toggle="modal" data-target="#confirmModal">
+    Ver ejemplo confirm
+</button>
+
+<!-- ventana de confirmación -->
+			
+<div class="modal fade modal-md modal-confirm" id="confirmModal" role="dialog" aria-labelledby="confirmModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				    <span aria-hidden="true">×</span>
+				</button>
+				<h4 class="modal-title" id="myModalLabel">Eliminar hotel</h4>
+			</div>
+			<div class="modal-body">
+				<p>¿Seguro que quieres realizar esta <strong>acción</strong>?</p>
+				<p>¡Esta acción no se puede deshacer!</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+				<button type="button" class="btn btn-danger" data-dismiss="modal">Eliminar</button>
+			</div>
+		</div>
+	</div>
+</div>
