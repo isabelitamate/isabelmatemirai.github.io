@@ -1,0 +1,130 @@
+/* scss/extranet/_buttons.scss */
+/* scss/extranet/_link-icon.scss */
+/* scss/extranet/_link.scss */
+/* scss/extranet/_link-delete.scss */
+/* scss/extranet/_link-new-tab.scss */
+/* scss/extranet/_tags.scss */
+/* scss/modules/_box.scss */
+.box {
+  background: #eee;
+  padding: 20px;
+  width: 300px;
+  height: 150px; }
+
+/* scss/modules/_alertwrapper.scss */
+/* scss/modules/_dangeralertwrapper.scss */
+/* scss/modules/_navegacion.scss */
+/* scss/modules/_navpills.scss */
+/* scss/modules/_modals.scss */
+/* scss/modules/_modalsconfirmation.scss */
+/* scss/configuration/_settings.scss */
+/* scss/configuration/_clickme.scss */
+.click {
+  cursor: pointer;
+  position: relative;
+  left: 0;
+  transition: left .25s;
+  background: #ccf9bf;
+  padding: 20px 40px;
+  display: inline-block; }
+
+.clickAnimate {
+  left: 80%; }
+
+/* scss/configuration/_sidebars.scss */
+/* scss/wiki-front/_menu-hamburguesa-desde-desktop.scss */
+/* DROPMENU */
+.wrapper-dropmenu {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  left: -100vw;
+  top: 0;
+  z-index: 9999;
+  background-color: lightcoral;
+  transition: all 250ms ease-out;
+  -webkit-transition: all 250ms ease-out; }
+
+.dropmenu-active .wrapper-dropmenu {
+  position: fixed;
+  left: 0;
+  transition: all 250ms ease-out;
+  -webkit-transition: all 250ms ease-out; }
+
+.dropmenu {
+  color: black;
+  position: fixed;
+  z-index: 99991;
+  float: left;
+  cursor: pointer;
+  display: flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center; }
+
+.dropmenu-icon {
+  height: 30px;
+  width: 30px;
+  margin-right: 10px;
+  position: relative; }
+
+.dropmenu-icon div {
+  background-color: black;
+  height: 4px;
+  position: absolute;
+  left: 0;
+  border-radius: 1px;
+  transition: all 500ms ease-out;
+  -webkit-transition: all 500ms ease-out; }
+
+.dropmenu-icon .line1 {
+  width: 60%;
+  top: 0; }
+
+.dropmenu-icon .line2 {
+  width: 100%;
+  top: 50%;
+  transform: translateY(-2px);
+  -webkit-transform: translateY(-2px); }
+
+.dropmenu-icon .line3 {
+  width: 80%;
+  bottom: 0; }
+
+.dropmenu span {
+  font-size: 20px;
+  text-transform: uppercase; }
+
+.dropmenu:hover .line1,
+.dropmenu:hover .line2,
+.dropmenu:hover .line3 {
+  width: 100%;
+  transition: all 500ms ease-out;
+  -webkit-transition: all 500ms ease-out; }
+
+.dropmenu-active .line1 {
+  width: 100% !important;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  -webkit-transform: translate(-50%, -50%) rotate(45deg); }
+
+.dropmenu-active .line3 {
+  width: 100% !important;
+  bottom: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  -webkit-transform: translate(-50%, -50%) rotate(-45deg); }
+
+.dropmenu-active .dropmenu:hover .line1,
+dropmenu-active .dropmenu:hover .line3 {
+  width: 100% !important; }
+
+.dropmenu-active .line2, .dropmenu-active .dropmenu-open, .dropmenu-close {
+  display: none; }
+
+.dropmenu-open, .dropmenu-active .dropmenu-close {
+  display: block; }
