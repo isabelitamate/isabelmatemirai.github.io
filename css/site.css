@@ -581,23 +581,108 @@ See http://bgrins.github.io/spectrum/themes/ for instructions.
   background-position: center;
   background-image: url(data:image/gif;base64,R0lGODlhFAAUAPcAAAAAAJmZmZ2dnZ6enqKioqOjo6SkpKWlpaampqenp6ioqKmpqaqqqqurq/Hx8fLy8vT09PX19ff39/j4+Pn5+fr6+vv7+wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAAP8ALAAAAAAUABQAAAihAP9FoPCvoMGDBy08+EdhQAIJCCMybCDAAYUEARBAlFiQQoMABQhKUJBxY0SPICEYHBnggEmDKAuoPMjS5cGYMxHW3IiT478JJA8M/CjTZ0GgLRekNGpwAsYABHIypcAgQMsITDtWJYBR6NSqMico9cqR6tKfY7GeBCuVwlipDNmefAtTrkSzB1RaIAoXodsABiZAEFB06gIBWC1mLVgBa0AAOw==); }
 
-#atomsWrap {
-  /*// Reset and dependencies
+/*// Reset and dependencies
 @import "bootstrap/normalize";
 @import "bootstrap/print";
 @import "bootstrap/glyphicons";*/
-  /*@import "bootstrap/scaffolding";
+/*@import "bootstrap/scaffolding";
 @import "bootstrap/type";
 @import "bootstrap/code";
 @import "bootstrap/grid";
 @import "bootstrap/tables";
 @import "bootstrap/forms";
 @import "bootstrap/buttons";*/
-  /*@import "bootstrap/component-animations";
+/*@import "bootstrap/component-animations";
 @import "bootstrap/dropdowns";
 @import "bootstrap/button-groups";
 @import "bootstrap/input-groups";*/
-  /*@import "bootstrap/navbar";
+.nav-atomic {
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none; }
+  .nav-atomic:before, .nav-atomic:after {
+    content: " ";
+    display: table; }
+  .nav-atomic:after {
+    clear: both; }
+  .nav-atomic > li {
+    position: relative;
+    display: block; }
+    .nav-atomic > li > a {
+      position: relative;
+      display: block;
+      padding: 10px 15px; }
+      .nav-atomic > li > a:hover, .nav-atomic > li > a:focus {
+        text-decoration: none;
+        background-color: #eeeeee; }
+    .nav-atomic > li.disabled > a {
+      color: #777777; }
+      .nav-atomic > li.disabled > a:hover, .nav-atomic > li.disabled > a:focus {
+        color: #777777;
+        text-decoration: none;
+        background-color: transparent;
+        cursor: not-allowed; }
+  .nav-atomic .open > a, .nav-atomic .open > a:hover, .nav-atomic .open > a:focus {
+    background-color: #eeeeee;
+    border-color: #337ab7; }
+  .nav-atomic .nav-divider {
+    height: 1px;
+    margin: 9px 0;
+    overflow: hidden;
+    background-color: #e5e5e5; }
+  .nav-atomic > li > a > img {
+    max-width: none; }
+
+.nav-tabs-atomic {
+  border-bottom: 1px solid #ddd; }
+  .nav-tabs-atomic > li {
+    float: left;
+    margin-bottom: -1px; }
+    .nav-tabs-atomic > li > a {
+      margin-right: 2px;
+      line-height: 1.42857;
+      border: 1px solid transparent;
+      border-radius: 4px 4px 0 0; }
+      .nav-tabs-atomic > li > a:hover {
+        border-color: #eeeeee #eeeeee #ddd; }
+    .nav-tabs-atomic > li.active > a, .nav-tabs-atomic > li.active > a:hover, .nav-tabs-atomic > li.active > a:focus {
+      color: #555555;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-bottom-color: transparent;
+      cursor: default; }
+
+.nav-tabs-justified, .nav-tabs-atomic.nav-justified {
+  border-bottom: 0; }
+  .nav-tabs-justified > li > a, .nav-tabs-atomic.nav-justified > li > a {
+    margin-right: 0;
+    border-radius: 4px; }
+  .nav-tabs-justified > .active > a, .nav-tabs-atomic.nav-justified > .active > a,
+  .nav-tabs-justified > .active > a:hover,
+  .nav-tabs-atomic.nav-justified > .active > a:hover,
+  .nav-tabs-justified > .active > a:focus,
+  .nav-tabs-atomic.nav-justified > .active > a:focus {
+    border: 1px solid #ddd; }
+  @media (min-width: 768px) {
+    .nav-tabs-justified > li > a, .nav-tabs-atomic.nav-justified > li > a {
+      border-bottom: 1px solid #ddd;
+      border-radius: 4px 4px 0 0; }
+    .nav-tabs-justified > .active > a, .nav-tabs-atomic.nav-justified > .active > a,
+    .nav-tabs-justified > .active > a:hover,
+    .nav-tabs-atomic.nav-justified > .active > a:hover,
+    .nav-tabs-justified > .active > a:focus,
+    .nav-tabs-atomic.nav-justified > .active > a:focus {
+      border-bottom-color: #fff; } }
+
+.tab-content > .tab-pane {
+  display: none;
+  visibility: hidden; }
+
+.tab-content > .active {
+  display: block;
+  visibility: visible; }
+
+/*@import "bootstrap/navbar";
 @import "bootstrap/breadcrumbs";
 @import "bootstrap/pagination";
 @import "bootstrap/pager";
@@ -613,12 +698,13 @@ See http://bgrins.github.io/spectrum/themes/ for instructions.
 @import "bootstrap/responsive-embed";
 @import "bootstrap/wells";
 @import "bootstrap/close";*/
-  /*@import "bootstrap/modals";
+/*@import "bootstrap/modals";
 @import "bootstrap/tooltip";
 @import "bootstrap/popovers";
 @import "bootstrap/carousel";*/
-  /*@import "bootstrap/utilities";
+/*@import "bootstrap/utilities";
 @import "bootstrap/responsive-utilities";*/
+#atomsWrap {
   /*@include col($six);*/
   /* .cat-form-btn.show-hide_cls{
 	display:none;
@@ -632,121 +718,20 @@ See http://bgrins.github.io/spectrum/themes/ for instructions.
     height: 100%;
 }*/
   /****************************/
+  /*@media (max-width: 824px) {
+  .atoms-side {
+    transition: all .25s;
+    transform: translateX(-100%);
+    width: 100%;
+  }
+  .atomic-h1 {
+    margin-left: 24px;
+  }
+}*/
   /*body {
   color: #7A7A7A;
   font-family: $font1;
 }*/ }
-  #atomsWrap .nav-atomic {
-    margin-bottom: 0;
-    padding-left: 0;
-    list-style: none; }
-    #atomsWrap .nav-atomic:before, #atomsWrap .nav-atomic:after {
-      content: " ";
-      display: table; }
-    #atomsWrap .nav-atomic:after {
-      clear: both; }
-    #atomsWrap .nav-atomic > li {
-      position: relative;
-      display: block; }
-      #atomsWrap .nav-atomic > li > a {
-        position: relative;
-        display: block;
-        padding: 10px 15px; }
-        #atomsWrap .nav-atomic > li > a:hover, #atomsWrap .nav-atomic > li > a:focus {
-          text-decoration: none;
-          background-color: #eeeeee; }
-      #atomsWrap .nav-atomic > li.disabled > a {
-        color: #777777; }
-        #atomsWrap .nav-atomic > li.disabled > a:hover, #atomsWrap .nav-atomic > li.disabled > a:focus {
-          color: #777777;
-          text-decoration: none;
-          background-color: transparent;
-          cursor: not-allowed; }
-    #atomsWrap .nav-atomic .open > a, #atomsWrap .nav-atomic .open > a:hover, #atomsWrap .nav-atomic .open > a:focus {
-      background-color: #eeeeee;
-      border-color: #337ab7; }
-    #atomsWrap .nav-atomic .nav-divider {
-      height: 1px;
-      margin: 9px 0;
-      overflow: hidden;
-      background-color: #e5e5e5; }
-    #atomsWrap .nav-atomic > li > a > img {
-      max-width: none; }
-  #atomsWrap .nav-tabs-atomic {
-    border-bottom: 1px solid #ddd; }
-    #atomsWrap .nav-tabs-atomic > li {
-      float: left;
-      margin-bottom: -1px; }
-      #atomsWrap .nav-tabs-atomic > li > a {
-        margin-right: 2px;
-        line-height: 1.42857;
-        border: 1px solid transparent;
-        border-radius: 4px 4px 0 0; }
-        #atomsWrap .nav-tabs-atomic > li > a:hover {
-          border-color: #eeeeee #eeeeee #ddd; }
-      #atomsWrap .nav-tabs-atomic > li.active > a, #atomsWrap .nav-tabs-atomic > li.active > a:hover, #atomsWrap .nav-tabs-atomic > li.active > a:focus {
-        color: #555555;
-        background-color: #fff;
-        border: 1px solid #ddd;
-        border-bottom-color: transparent;
-        cursor: default; }
-  #atomsWrap .nav-pills > li {
-    float: left; }
-    #atomsWrap .nav-pills > li > a {
-      border-radius: 4px; }
-    #atomsWrap .nav-pills > li + li {
-      margin-left: 2px; }
-    #atomsWrap .nav-pills > li.active > a, #atomsWrap .nav-pills > li.active > a:hover, #atomsWrap .nav-pills > li.active > a:focus {
-      color: #fff;
-      background-color: #337ab7; }
-  #atomsWrap .nav-stacked > li {
-    float: none; }
-    #atomsWrap .nav-stacked > li + li {
-      margin-top: 2px;
-      margin-left: 0; }
-  #atomsWrap .nav-justified, #atomsWrap .nav-tabs-atomic.nav-justified {
-    width: 100%; }
-    #atomsWrap .nav-justified > li, #atomsWrap .nav-tabs-atomic.nav-justified > li {
-      float: none; }
-      #atomsWrap .nav-justified > li > a, #atomsWrap .nav-tabs-atomic.nav-justified > li > a {
-        text-align: center;
-        margin-bottom: 5px; }
-    #atomsWrap .nav-justified > .dropdown .dropdown-menu {
-      top: auto;
-      left: auto; }
-    @media (min-width: 768px) {
-      #atomsWrap .nav-justified > li, #atomsWrap .nav-tabs-atomic.nav-justified > li {
-        display: table-cell;
-        width: 1%; }
-        #atomsWrap .nav-justified > li > a, #atomsWrap .nav-tabs-atomic.nav-justified > li > a {
-          margin-bottom: 0; } }
-  #atomsWrap .nav-tabs-justified, #atomsWrap .nav-tabs-atomic.nav-justified {
-    border-bottom: 0; }
-    #atomsWrap .nav-tabs-justified > li > a, #atomsWrap .nav-tabs-atomic.nav-justified > li > a {
-      margin-right: 0;
-      border-radius: 4px; }
-    #atomsWrap .nav-tabs-justified > .active > a, #atomsWrap .nav-tabs-atomic.nav-justified > .active > a,
-    #atomsWrap .nav-tabs-justified > .active > a:hover, #atomsWrap .nav-tabs-atomic.nav-justified > .active > a:hover,
-    #atomsWrap .nav-tabs-justified > .active > a:focus, #atomsWrap .nav-tabs-atomic.nav-justified > .active > a:focus {
-      border: 1px solid #ddd; }
-    @media (min-width: 768px) {
-      #atomsWrap .nav-tabs-justified > li > a, #atomsWrap .nav-tabs-atomic.nav-justified > li > a {
-        border-bottom: 1px solid #ddd;
-        border-radius: 4px 4px 0 0; }
-      #atomsWrap .nav-tabs-justified > .active > a, #atomsWrap .nav-tabs-atomic.nav-justified > .active > a,
-      #atomsWrap .nav-tabs-justified > .active > a:hover, #atomsWrap .nav-tabs-atomic.nav-justified > .active > a:hover,
-      #atomsWrap .nav-tabs-justified > .active > a:focus, #atomsWrap .nav-tabs-atomic.nav-justified > .active > a:focus {
-        border-bottom-color: #fff; } }
-  #atomsWrap .tab-content > .tab-pane {
-    display: none;
-    visibility: hidden; }
-  #atomsWrap .tab-content > .active {
-    display: block;
-    visibility: visible; }
-  #atomsWrap .nav-tabs-atomic .dropdown-menu {
-    margin-top: -1px;
-    border-top-right-radius: 0;
-    border-top-left-radius: 0; }
   #atomsWrap [class*='nb-'] {
     position: relative;
     -moz-box-sizing: border-box;
@@ -821,14 +806,14 @@ See http://bgrins.github.io/spectrum/themes/ for instructions.
     margin-top: 0;
     color: #3d4a57;
     font-weight: 300;
-    font-family: "Open Sans", sans-serif;
+    font-family: "MuseoSans", "Open Sans", sans-serif;
     font-size: 29px;
     padding: 6px 0;
     line-height: 1.1; }
   #atomsWrap .formGroup-check {
     margin-bottom: 24px; }
     #atomsWrap .formGroup-check label {
-      font-weight: normal;
+      font-weight: 300;
       margin-bottom: 0; }
   #atomsWrap .formInput-check {
     display: none; }
@@ -856,7 +841,7 @@ See http://bgrins.github.io/spectrum/themes/ for instructions.
   #atomsWrap .inputGroup {
     margin-bottom: 22px; }
   #atomsWrap textarea.formInput {
-    height: 200px;
+    height: 150px;
     padding: 20px;
     text-indent: 0; }
   #atomsWrap .formInput {
@@ -865,10 +850,11 @@ See http://bgrins.github.io/spectrum/themes/ for instructions.
     background: #fff;
     box-shadow: none;
     color: #7A7A7A;
-    font-family: "Open Sans", sans-serif;
+    font-family: "MuseoSans", "Open Sans", sans-serif;
     width: 100%;
     height: 50px;
     font-size: 14px;
+    font-weight: 300;
     text-indent: 20px;
     box-shadow: none;
     padding: 0; }
@@ -886,10 +872,10 @@ See http://bgrins.github.io/spectrum/themes/ for instructions.
   #atomsWrap .active .aa_dir__dirNameGroup__icon {
     display: inline; }
   #atomsWrap .aa_dir__dirNameGroup__icon {
-    color: #00aff0;
+    color: #ee293a;
     float: left;
     margin-left: 17px;
-    margin-top: 9px;
+    margin-top: 10px;
     z-index: 50;
     cursor: pointer;
     text-align: center;
@@ -907,7 +893,7 @@ See http://bgrins.github.io/spectrum/themes/ for instructions.
     color: #fff;
     font-size: 14px; }
   #atomsWrap .cat-form-group {
-    background: #00aff0;
+    background: #ee293a;
     position: fixed;
     width: 262px;
     bottom: 0;
@@ -928,7 +914,8 @@ See http://bgrins.github.io/spectrum/themes/ for instructions.
       position: absolute;
       right: 10px;
       top: 10px;
-      cursor: pointer; }
+      cursor: pointer;
+      color: #ee293a; }
   #atomsWrap .cat-form {
     margin-top: 10px; }
   #atomsWrap .js-showContent {
@@ -944,15 +931,27 @@ See http://bgrins.github.io/spectrum/themes/ for instructions.
     color: #929292;
     font-weight: 300;
     cursor: pointer;
-    font-family: "Open Sans", sans-serif; }
+    font-family: "MuseoSans", "Open Sans", sans-serif; }
   #atomsWrap .copyBtn-edit {
     right: 45px;
     display: none; }
+  #atomsWrap .nav-tabs-atomic > li.expandItem {
+    float: right;
+    position: relative;
+    right: 68px; }
+  #atomsWrap .expandBtn {
+    cursor: pointer;
+    padding: 5px 8px;
+    font-size: 12px;
+    color: #929292;
+    font-weight: 300;
+    cursor: pointer; }
   #atomsWrap .compNotes {
     font-size: 13px;
     color: #7A7A7A;
     margin-bottom: 20px;
-    max-width: 700px; }
+    max-width: 700px;
+    font-weight: 300; }
   #atomsWrap .atomic-search {
     padding: 15px;
     background: #2988ac;
@@ -1008,7 +1007,7 @@ See http://bgrins.github.io/spectrum/themes/ for instructions.
     position: fixed;
     background: rgba(0, 121, 191, 0.77);
     color: #fff;
-    font-family: "Open Sans", sans-serif;
+    font-family: "MuseoSans", "Open Sans", sans-serif;
     opacity: 0;
     display: none;
     z-index: 6000;
@@ -1100,7 +1099,7 @@ See http://bgrins.github.io/spectrum/themes/ for instructions.
     width: 100%;
     padding-top: 0; }
   #atomsWrap .compTitle, #atomsWrap .compNotes, #atomsWrap .nav-tabs-atomic {
-    font-family: "Open Sans", sans-serif; }
+    font-family: "MuseoSans", "Open Sans", sans-serif; }
   #atomsWrap code, #atomsWrap kbd, #atomsWrap pre, #atomsWrap samp {
     font-size: 14px; }
   #atomsWrap pre[class*="language-"] {
@@ -1123,7 +1122,8 @@ See http://bgrins.github.io/spectrum/themes/ for instructions.
     top: 0;
     z-index: 5000;
     width: 200px;
-    font-family: "Open Sans", sans-serif; }
+    font-family: "MuseoSans", "Open Sans", sans-serif;
+    font-weight: 300; }
     #atomsWrap .atoms-side nav {
       margin-left: 24px;
       margin-left: 24px; }
@@ -1144,10 +1144,12 @@ See http://bgrins.github.io/spectrum/themes/ for instructions.
     text-decoration: none; }
   #atomsWrap .aa_addFile {
     color: #9DA0A0;
-    padding-left: 39px;
     margin-bottom: 10px;
-    display: block;
-    font-size: 10px; }
+    font-size: 10px;
+    padding: 4px 9px;
+    display: inline-block;
+    border-radius: 4px;
+    margin-left: 25px; }
   #atomsWrap .aa_fileSection__file {
     padding-left: 39px; }
     #atomsWrap .aa_fileSection__file .fa {
@@ -1175,10 +1177,10 @@ See http://bgrins.github.io/spectrum/themes/ for instructions.
     font-size: 14px;
     text-align: center; }
   #atomsWrap .navIcon {
-    color: #00aff0; }
+    color: #ee293a; }
   #atomsWrap .atoms-side_show {
     display: none;
-    background: #00aff0;
+    background: #ee293a;
     cursor: pointer;
     position: fixed;
     z-index: 5000;
@@ -1202,10 +1204,9 @@ See http://bgrins.github.io/spectrum/themes/ for instructions.
     position: relative;
     left: -1px; }
   #atomsWrap .atoms-side_show-small, #atomsWrap .smallOpen {
-    background: #00aff0;
+    background: #ee293a;
     cursor: pointer;
     position: fixed;
-    z-index: 5000;
     color: #fff;
     height: 30px;
     width: 30px;
@@ -1215,23 +1216,22 @@ See http://bgrins.github.io/spectrum/themes/ for instructions.
     box-shadow: rgba(0, 0, 0, 0.21) 0px 0px 5px 2px;
     opacity: .4;
     top: 7px;
-    right: -100%;
+    left: -100%;
     z-index: 7000; }
     #atomsWrap .atoms-side_show-small:hover, #atomsWrap .smallOpen:hover {
       opacity: 1; }
   #atomsWrap .catAdd a {
-    padding: 0px 18px;
-    display: block;
     color: #9DA0A0;
-    display: block;
-    font-size: 10px; }
-  @media (max-width: 824px) {
-    #atomsWrap .atoms-side {
-      transition: all .25s;
-      transform: translateX(-100%);
-      width: 100%; }
-    #atomsWrap .atomic-h1 {
-      margin-left: 24px; } }
+    font-size: 10px;
+    padding: 4px 9px;
+    display: inline-block;
+    border-radius: 4px;
+    margin-left: 15px;
+    position: relative;
+    border: 1px dashed; }
+  #atomsWrap .catAdd .fa {
+    font-size: 12px;
+    margin-right: 4px; }
   #atomsWrap .aa_dir .fa-pencil-square-o {
     display: none; }
   #atomsWrap .aa_dir.active .fa-pencil-square-o {
@@ -1241,14 +1241,13 @@ See http://bgrins.github.io/spectrum/themes/ for instructions.
     top: 0;
     right: -100%;
     bottom: 0;
-    background: #e3e4e3;
+    background: #f1f1f1;
     z-index: 6000;
     padding: 50px;
-    padding-top: 100px;
     height: 100%;
     width: 500px !important;
-    box-shadow: -4px 0px 5px 0px rgba(0, 0, 0, 0.19);
-    font-family: "Open Sans", sans-serif;
+    box-shadow: -4px 0px 5px 0px rgba(0, 0, 0, 0.1);
+    font-family: "MuseoSans", "Open Sans", sans-serif;
     box-sizing: border-box;
     color: #7a7a7a;
     overflow: auto; }
@@ -1262,17 +1261,18 @@ See http://bgrins.github.io/spectrum/themes/ for instructions.
       color: #7A7A7A; }
   #atomsWrap .aa_actionDrawer__close {
     cursor: pointer;
-    color: #B5B4B4;
+    color: #3d4a57;
     position: absolute;
-    right: 0;
-    top: -53px; }
+    right: -38px;
+    top: -46px;
+    font-size: 11px; }
   #atomsWrap .aa_label {
     display: block;
     margin-bottom: 6px;
     color: #7A7A7A;
-    font-weight: normal; }
+    font-weight: 300; }
   #atomsWrap .aa_label__file {
-    color: #00aff0;
+    color: #ee293a;
     font-weight: bold; }
   #atomsWrap .formInputGroup {
     margin-bottom: 24px; }
@@ -1290,11 +1290,15 @@ See http://bgrins.github.io/spectrum/themes/ for instructions.
     color: #fff;
     background-color: #7A7A7A;
     font-size: 14px;
-    font-family: "Open Sans", sans-serif; }
+    font-family: "MuseoSans", "Open Sans", sans-serif; }
   #atomsWrap .aa_btn-pos {
-    background-color: #51CD6D; }
+    background-color: #ee293a; }
   #atomsWrap .aa_btn-neg {
-    background-color: #CD5151; }
+    background-color: #3d4a57; }
+  #atomsWrap .aa_btn-full {
+    width: 100%;
+    display: block;
+    margin-bottom: 12px; }
   #atomsWrap .aa_errorBox {
     position: absolute;
     top: 0;
@@ -1314,18 +1318,18 @@ See http://bgrins.github.io/spectrum/themes/ for instructions.
     #atomsWrap .aa_actionDrawer {
       width: 100% !important;
       padding: 25px; } }
-  #atomsWrap .compWrap .nav-tabs-atomic {
+  #atomsWrap .codeBlocks .nav-tabs-atomic {
     border: 1px solid #dadada;
     margin-top: 0;
     background: #fff; }
-  #atomsWrap .compWrap .nav-tabs-atomic > li.active > a, #atomsWrap .compWrap .nav-tabs-atomic > li.active > a:focus, #atomsWrap .compWrap .nav-tabs-atomic > li.active > a:hover {
+  #atomsWrap .codeBlocks .nav-tabs-atomic > li.active > a, #atomsWrap .codeBlocks .nav-tabs-atomic > li.active > a:focus, #atomsWrap .codeBlocks .nav-tabs-atomic > li.active > a:hover {
     border: none;
-    border-bottom: 3px solid #00aff0;
+    border-bottom: 3px solid #ee293a;
     color: inherit; }
-  #atomsWrap .compWrap .nav-atomic > li > a:focus, #atomsWrap .compWrap .nav-atomic > li > a:hover {
+  #atomsWrap .codeBlocks .nav-atomic > li > a:focus, #atomsWrap .codeBlocks .nav-atomic > li > a:hover {
     background: none;
     border: none; }
-  #atomsWrap .compWrap .nav-tabs-atomic > li > a {
+  #atomsWrap .codeBlocks .nav-tabs-atomic > li > a {
     margin-right: 0;
     line-height: 1;
     border: none;
@@ -1334,6 +1338,25 @@ See http://bgrins.github.io/spectrum/themes/ for instructions.
     font-size: 12px;
     color: #929292;
     font-weight: 300; }
+  #atomsWrap .tabForm {
+    display: inline-block;
+    margin-bottom: 0; }
+    #atomsWrap .tabForm label {
+      margin-right: 0;
+      line-height: 1;
+      border: none;
+      border-radius: 0;
+      text-decoration: none;
+      font-size: 12px;
+      color: #929292;
+      font-weight: 300;
+      padding: 10px 15px;
+      display: block; }
+    #atomsWrap .tabForm .formInput-check + label span {
+      width: 10px;
+      height: 10px;
+      top: 0;
+      border: 1px solid; }
   #atomsWrap .atomic-editorWrap {
     font-size: 16px;
     position: relative;
@@ -1345,7 +1368,12 @@ See http://bgrins.github.io/spectrum/themes/ for instructions.
     z-index: 2;
     background-color: #f7f7f7;
     border: 1px solid #dadada;
-    border-top: 0; }
+    border-top: 0;
+    max-height: 200px;
+    overflow: auto; }
+  #atomsWrap .codeBlocks.codeBlocks-open .atomic-editorInner {
+    max-height: 100%;
+    height: auto; }
   #atomsWrap .ace-tm {
     background-color: #f7f7f7;
     font-size: 15px;
@@ -1367,13 +1395,18 @@ See http://bgrins.github.io/spectrum/themes/ for instructions.
   #atomsWrap .ace-tm .ace_meta.ace_tag {
     color: #a04a64; }
   #atomsWrap .ace-tm .ace_string, #atomsWrap .ace-tm .ace_variable {
-    color: #690; }
+    color: #ee293a; }
   #atomsWrap .ace-tm .ace_support.ace_type, #atomsWrap .ace-tm .ace_support.ace_class {
     color: #a04a64; }
   #atomsWrap .ace-tm .ace_constant.ace_numeric {
     color: #4a4a4a; }
+  #atomsWrap .ace-tm .ace_constant.ace_language {
+    color: #65a768; }
+  #atomsWrap .ace-tm .ace_storage, #atomsWrap .ace-tm .ace_keyword {
+    color: #ca6abc; }
   #atomsWrap .atomic-editor-footer {
     border: 1px solid #dadada;
+    border-bottom: none;
     background: #fff;
     border-top: none;
     padding: 0;
@@ -1395,7 +1428,9 @@ See http://bgrins.github.io/spectrum/themes/ for instructions.
   #atomsWrap .codeBlocks {
     box-shadow: none; }
   #atomsWrap .atomic-editorWrap-active {
-    padding-bottom: 35px; }
+    padding-bottom: 35px;
+    box-shadow: 0px 3px 21px -2px rgba(0, 0, 0, 0.17);
+    border-bottom: 1px solid #dadada; }
     #atomsWrap .atomic-editorWrap-active .atomic-editor-footer {
       display: block;
       top: 100%;
@@ -1407,6 +1442,8 @@ See http://bgrins.github.io/spectrum/themes/ for instructions.
       left: 0; }
     #atomsWrap .atomic-editorWrap-active .ace_scroller {
       left: 57px !important; }
+    #atomsWrap .atomic-editorWrap-active .atomic-editorInner {
+      max-height: 100%; }
   #atomsWrap .clientMode .atomic-editorWrap-active {
     margin-bottom: 0; }
     #atomsWrap .clientMode .atomic-editorWrap-active .ace-tm .ace_gutter {
@@ -1438,7 +1475,7 @@ See http://bgrins.github.io/spectrum/themes/ for instructions.
   #atomsWrap .compTitle {
     display: block;
     margin-bottom: 12px;
-    color: #00AFF0;
+    color: #ee293a;
     padding-left: 3px;
     max-height: 25px; }
     #atomsWrap .compTitle a {
@@ -1484,7 +1521,7 @@ See http://bgrins.github.io/spectrum/themes/ for instructions.
     font-size: 14px;
     padding: 6px 12px;
     cursor: pointer;
-    font-family: "Open Sans", sans-serif; }
+    font-family: "MuseoSans", "Open Sans", sans-serif; }
   #atomsWrap .atomic-btn1 {
     background: #37c737; }
   #atomsWrap .atomic-btn2 {
@@ -1542,7 +1579,7 @@ See http://bgrins.github.io/spectrum/themes/ for instructions.
     top: 0; }
   #atomsWrap .se-pre-con {
     position: fixed;
-    padding-left: 265px;
+    padding-left: 200px;
     right: 0;
     top: 0px;
     width: 100%;
@@ -1552,15 +1589,19 @@ See http://bgrins.github.io/spectrum/themes/ for instructions.
   #atomsWrap .se-pre-con-inner {
     position: relative;
     text-align: center;
-    background: #FCFEFA url("../img/squares.gif") no-repeat center center;
+    background: #fff url("../img/circle.gif") no-repeat center center;
     height: 100%; }
   #atomsWrap .featureHints {
-    margin-top: 40px; }
+    margin-top: 40px;
+    padding: 10px 20px;
+    background: #ececec;
+    border-left: 5px solid #ee293a; }
     #atomsWrap .featureHints p {
-      font-size: 14px;
-      font-style: italic; }
+      font-size: 13px;
+      font-weight: 300; }
     #atomsWrap .featureHints p:first-of-type {
-      font-style: normal; }
+      font-style: normal;
+      margin-top: 10px; }
   #atomsWrap .clientMode .aa_actionDrawer, #atomsWrap .clientMode .fa-pencil-square-o, #atomsWrap .clientMode .atomic-editor-footer, #atomsWrap .clientMode .copyBtn-edit, #atomsWrap .clientMode .aa_addFile, #atomsWrap .clientMode .catAdd {
     display: none !important; }
   #atomsWrap .logo {
@@ -1570,6 +1611,61 @@ See http://bgrins.github.io/spectrum/themes/ for instructions.
     padding-top: 20px; }
     #atomsWrap .logo img {
       max-width: 100%; }
+
+@font-face {
+  font-family: 'MuseoSans';
+  font-weight: 100;
+  src: url("../font-awesome/css/MuseoSans_100.otf") format("opentype"); }
+
+@font-face {
+  font-family: 'MuseoSans';
+  font-weight: 100;
+  font-style: italic;
+  src: url("../font-awesome/css/MuseoSans_100_Italic.otf") format("opentype"); }
+
+@font-face {
+  font-family: 'MuseoSans';
+  font-weight: 300;
+  src: url("../font-awesome/css/MuseoSans_300.otf") format("opentype"); }
+
+@font-face {
+  font-family: 'MuseoSans';
+  font-weight: 300;
+  font-style: italic;
+  src: url("../font-awesome/css/MuseoSans_300_Italic.otf") format("opentype"); }
+
+@font-face {
+  font-family: 'MuseoSans';
+  font-weight: 500;
+  src: url("../font-awesome/css/MuseoSans_500.otf") format("opentype"); }
+
+@font-face {
+  font-family: 'MuseoSans';
+  font-weight: 500;
+  font-style: italic;
+  src: url("../atomic-docs/atomic-core/font-awesome/css/MuseoSans_500_Italic.otf") format("opentype"); }
+
+@font-face {
+  font-family: 'MuseoSans';
+  font-weight: 700;
+  src: url("atomic-docs/atomic-core/font-awesome/css/MuseoSans_700.otf") format("opentype"); }
+
+@font-face {
+  font-family: 'MuseoSans';
+  font-weight: 700;
+  font-style: italic;
+  src: url("atomic-docs/atomic-core/font-awesome/css/MuseoSans_700_Italic.otf") format("opentype"); }
+
+@font-face {
+  font-family: 'MuseoSans';
+  font-weight: 900;
+  src: url("atomic-docs/atomic-core/font-awesome/css/MuseoSans_900.otf") format("opentype"); }
+
+@font-face {
+  font-family: 'MuseoSans';
+  font-weight: 900;
+  font-style: italic;
+  src: url("atomic-docs/atomic-core/font-awesome/css/MuseoSans_900_Italic.otf") format("opentype"); }
 
 html {
   box-sizing: border-box; }

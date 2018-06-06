@@ -1,0 +1,1 @@
+function showAlertWrapper(e){var n="#"+e;$(n).fadeIn(1e3,function(){0<$(this).has(".alert-success").length&&window.setTimeout(function(){$(n).fadeOut(1e3)},3e3)})}$(".click").click(function(){$(this).toggleClass("clickAnimate")}),$(document).ready(function(){$(".alert-warning .close").on("click",function(){$(this).parent().parent().fadeOut(1e3)})});main
